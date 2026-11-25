@@ -1,17 +1,54 @@
+
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Jam Spreader coming soon!</title>
     <link rel="stylesheet" href="./style.css">
     <link rel="icon" href="./favicon.ico" type="image/x-icon">
-  </head>
-  <body>
+</head>
+<body>
     <main>
-        <h1>Ahoy there folks!</h1>  
+        <h1>Ahoy there folks!</h1>
+
+        <p id="random-quote">Loading...</p>
     </main>
-    <script src="index.js"></script>
-  </body>
+
+    <script>
+        const quotes = [
+            "I'm gonna turn into prime Epstein here - Pete 2026",
+            "I wasnt expecting him to be a man of colour - Esma 2025",
+            "I think women should feel comfortable emotionally but NEVER physically - Daniel 2025",
+            "I like embracing women's inners but I don't like embracing women - Eddie 2024",
+            "If Eddie hit on me, I'd kill myself - Andrei 2024",
+            "OH NOOO GUYS I'm Indian - Rebecca 2024",
+            "Once again, you've been talking to Alex - Alex 2023",
+            "If you saw Rishi Sunak walking about on the lurk, you'd think he'd be a big back leng ting - Mmesoma 2023",
+            "You know me, I'm a big woman hater, it's my passion - Jamie 2023",
+            "It's not gay if you don't finish - Seth 2022",
+            "At the end of the day, boys like their toys - Rafa 2022",
+            "Train shit fake fan little bitchy boi - Rebecca 2023"
+        ];
+
+        const quoteElement = document.getElementById("random-quote");
+
+        function randomQuote() {
+            const randomIndex = Math.floor(Math.random() * quotes.length);
+
+            quoteElement.style.opacity = 0;
+
+            setTimeout(() => {
+                quoteElement.textContent = quotes[randomIndex];
+                quoteElement.style.opacity = 1;
+            }, 300);
+        }
+
+
+        randomQuote();
+
+
+        setInterval(randomQuote, 10000);
+    </script>
+</body>
 </html>
